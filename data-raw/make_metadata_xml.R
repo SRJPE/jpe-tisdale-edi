@@ -7,14 +7,15 @@ library(EML)
 datatable_metadata <-
   dplyr::tibble(filepath = c("data/catch.csv",
                              "data/trap.csv"),
-                attribute_info = c(),
+                attribute_info = c("data-raw/metadata/tisdale_catch_metadata.xlsx",
+                                   "data-raw/metadata/tisdale_trap_metadata.xlsx"),
                 datatable_description = c("Daily catch",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-tisdale-edi/main/data/",
                                        c("catch.csv",
                                          "trap.csv")))
 
-excel_path <- "data-raw/metadata/butte_metadata.xlsx"
+excel_path <- "data-raw/metadata/tisdale_project_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
@@ -40,15 +41,14 @@ dataset <- list() %>%
   add_datatable(datatable_metadata)
 
 # GO through and check on all units
-custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "days"),
-                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
-                           parentSI = c(NA, NA, NA, NA, NA),
-                           multiplierToSI = c(NA, NA, NA, NA, NA),
+custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish"),
+                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA, NA, NA),
+                           multiplierToSI = c(NA, NA, NA, NA),
                            description = c("number of rotations",
                                            "nephelometric turbidity units, common unit for measuring turbidity",
                                            "number of revolutions per minute",
-                                           "number of fish counted",
-                                           "number of days"))
+                                           "number of fish counted"))
 
 
 unitList <- EML::set_unitList(custom_units)

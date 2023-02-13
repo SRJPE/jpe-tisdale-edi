@@ -32,8 +32,14 @@ write_csv(catch, here::here("data", "catch.csv"))
 
 # TODO do we want counterAtStart?
 # TODO discharge is all NAs
+# TODO outlier of 551 in waterTemp
 trap <- read_xlsx(here::here("data-raw", "Tisdale_TrapRaw.xlsx")) |>
   mutate(discharge = as.numeric(discharge)) |>
   glimpse()
 write_csv(trap, here::here("data", "trap.csv"))
 
+
+# read in clean data to check ---------------------------------------------
+
+catch <- read_csv(here::here("data", "catch.csv")) |> glimpse()
+trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
