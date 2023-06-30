@@ -11,7 +11,7 @@ datatable_metadata <-
                                    "data-raw/metadata/tisdale_trap_metadata.xlsx"),
                 datatable_description = c("Daily catch",
                                           "Daily trap operations"),
-                datatable_url = paste0("https://raw.githubusercontent.com/FlowWest/jpe-tisdale-edi/main/data/",
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/",
                                        c("catch.csv",
                                          "trap.csv")))
 
