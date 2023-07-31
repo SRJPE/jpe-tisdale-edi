@@ -106,10 +106,10 @@
       <geographicCoverage>
         <geographicDescription>Tisdale Rotary Screw Trap</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-121.8219</westBoundingCoordinate>
-          <eastBoundingCoordinate>-121.8219</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.0249</northBoundingCoordinate>
-          <southBoundingCoordinate>39.0249</southBoundingCoordinate>
+          <westBoundingCoordinate>-121.8384</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.8128</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.0543</northBoundingCoordinate>
+          <southBoundingCoordinate>39.0029</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
