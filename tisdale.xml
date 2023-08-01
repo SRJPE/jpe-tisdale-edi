@@ -30,7 +30,7 @@
       <electronicMailAddress>anna.allison@wildlife.ca.gov</electronicMailAddress>
       <role>principal investigator</role>
     </associatedParty>
-    <pubDate>2023-07-31</pubDate>
+    <pubDate>2023-08-01</pubDate>
     <abstract>
       <para>
     The Tisdale RST sampling site is operated by the California
@@ -234,6 +234,11 @@
         <electronicMailAddress>Andrew.Huneycutt@wildlife.ca.gov</electronicMailAddress>
         <role>Project Lead</role>
       </personnel>
+      <award>
+        <funderName>California Department of Water Resources</funderName>
+        <funderIdentifier>Q5020440</funderIdentifier>
+        <title>Department of Water Resources Northern Region Office</title>
+      </award>
     </project>
     <dataTable>
       <entityName>catch.csv</entityName>
