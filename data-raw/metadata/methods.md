@@ -23,4 +23,4 @@ Juvenile fall-run captured in RSTs or obtained from Coleman National Fish Hatche
 Fish are marked with Bismarck Brown Y (BBY) whole body stain. Fish are alternatively marked with a Visible Implant Elastomer (VIE) Tag.
 
 ## References
-Fisher, F. W. 1992. Chinook salmon, Oncorhynchus tshawytscha, growth and occurrence in the Sacramento-San Joaquin River system. Draft report dated June 1992. Sacramento, CA: Inland Fisheries Division, California Department Fish and Game. 42 p.
+Fisher, F.W. (1992). Chinook salmon, Oncorhynchus tshawytscha, growth and occurrence in the Sacramento-San Joaquin River system. Draft copy. California Department of Fish and Game, Inland Fisheries Division Office Report, Sacramento, CA. June 1992.
