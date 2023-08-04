@@ -76,3 +76,20 @@ EML::eml_validate(paste0(edi_number, ".xml"))
 #   mutate(version = as.numeric(version) + 1)
 # edi_number <- paste0(update_number$edi, ".", update_number$package, ".", update_number$version)
 
+# preview_coverage <- function(dataset) {
+#   coords <- dataset$coverage$geographicCoverage$boundingCoordinates
+#   north <- coords$northBoundingCoordinate
+#   south <- coords$southBoundingCoordinate
+#   east <- coords$eastBoundingCoordinate
+#   west <- coords$westBoundingCoordinate
+#
+#   leaflet::leaflet() |>
+#     leaflet::addTiles() |>
+#     leaflet::addRectangles(
+#       lng1 = west, lat1 = south,
+#       lng2 = east, lat2 = north,
+#       fillColor = "blue"
+#     )
+# }
+
+preview_coverage(dataset)
