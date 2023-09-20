@@ -24,8 +24,8 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 #methods_docx <- "data-raw/metadata/methods.docx"
 methods_docx <- "data-raw/metadata/methods.md" # use md for bulleted formatting. I don't believe lists are allowed in methods (https://edirepository.org/news/news-20210430.00)
 
-#edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
-# edi_number <- fill in with reserved edi number
+#edi_number <- reserve_edi_id(user_id = Sys.getenv("edi_user_id"), password = Sys.getenv("edi_password"))
+edi_number <- "edi.1499.1" # reserved 9-20-2023 under srjpe account
 
 dataset <- list() %>%
   add_pub_date() %>%
@@ -53,7 +53,7 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
 
 unitList <- EML::set_unitList(custom_units)
 
-edi_number <- "tisdale" # for now
+edi_number
 eml <- list(packageId = edi_number,
             system = "EDI",
             access = add_access(),
@@ -64,8 +64,8 @@ edi_number
 EML::write_eml(eml, paste0(edi_number, ".xml"))
 EML::eml_validate(paste0(edi_number, ".xml"))
 
-# EMLaide::evaluate_edi_package(Sys.getenv("user_ID"), Sys.getenv("password"), "edi.1047.1.xml")
-# EMLaide::upload_edi_package(Sys.getenv("user_ID"), Sys.getenv("password"), "edi.1047.1.xml")
+EMLaide::evaluate_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
+EMLaide::upload_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
 
 # The code below is for updating the eml number and will need to be implemented when
 # we move to automated updates
