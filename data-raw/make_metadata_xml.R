@@ -5,15 +5,15 @@ library(readxl)
 library(EML)
 
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/catch.csv",
-                             "data/trap.csv"),
+  dplyr::tibble(filepath = c("data/tisdale_catch.csv",
+                             "data/tisdale_trap.csv"),
                 attribute_info = c("data-raw/metadata/tisdale_catch_metadata.xlsx",
                                    "data-raw/metadata/tisdale_trap_metadata.xlsx"),
                 datatable_description = c("Daily catch",
                                           "Daily trap operations"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/",
-                                       c("catch.csv",
-                                         "trap.csv")))
+                                       c("tisdale_catch.csv",
+                                         "tisdale_trap.csv")))
 
 excel_path <- "data-raw/metadata/tisdale_project_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -25,7 +25,8 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md" # use md for bulleted formatting. I don't believe lists are allowed in methods (https://edirepository.org/news/news-20210430.00)
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("edi_user_id"), password = Sys.getenv("edi_password"))
-edi_number <- "edi.1499.1" # reserved 9-20-2023 under srjpe account
+# edi_number <- "edi.1499.1" # reserved 9-20-2023 under srjpe account
+edi_number <- "edi.1499.2" # for updating filenames 11-2023
 
 dataset <- list() %>%
   add_pub_date() %>%
