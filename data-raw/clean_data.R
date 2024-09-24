@@ -1,14 +1,14 @@
 library(tidyverse)
 library(readxl)
 
-catch <- read_xlsx(here::here("data-raw", "Tisdale_CatchRaw.xlsx")) |>
+catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated query has visitTime2
   mutate(totalLength = as.numeric(totalLength)) |>
   glimpse()
 
 # atCaptureRun vs finalRun
 catch |>
   mutate(run_compare = atCaptureRun == finalRun) |>
-  summarise(sum(run_compare, na.rm = T)/length(run_compare)) # they are equal 47% of the time
+  summarise(sum(run_compare, na.rm = T)/length(run_compare)) # they are equal 41% of the time
 
 # look into scenarios where they differ
 catch |>
@@ -33,10 +33,19 @@ write_csv(catch, here::here("data", "tisdale_catch.csv"))
 # TODO do we want counterAtStart?
 # TODO discharge is all NAs
 # TODO outlier of 551 in waterTemp
-trap <- read_xlsx(here::here("data-raw", "Tisdale_TrapRaw.xlsx")) |>
+
+#TODO check counterAtEnd values - max is 3195559 - did not update this value on metadata
+trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |>
   mutate(discharge = as.numeric(discharge)) |>
   glimpse()
 write_csv(trap, here::here("data", "tisdale_trap.csv"))
+
+#TODO - clean up tables below, create metadata
+recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
+  glimpse()
+
+release_fish <- read_xlsx(here::here("data-raw", "tisdale_releasefish.xlsx")) |>
+  glimpse()
 
 
 # read in clean data to check ---------------------------------------------
