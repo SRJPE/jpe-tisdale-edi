@@ -30,25 +30,37 @@ catch |>
 
 write_csv(catch, here::here("data", "tisdale_catch.csv"))
 
-# TODO do we want counterAtStart?
-# TODO discharge is all NAs
-# TODO outlier of 551 in waterTemp
-
-#TODO check counterAtEnd values - max is 3195559 - did not update this value on metadata
+# trap -----
 trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |>
-  mutate(discharge = as.numeric(discharge)) |>
+  mutate(discharge = as.numeric(discharge),
+         waterTemp = ifelse(waterTemp > 500, NA, waterTemp)) |>  # setting outlier of 551 in waterTemp to NA
   glimpse()
+# write clean csv
 write_csv(trap, here::here("data", "tisdale_trap.csv"))
 
-recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |> # note that some higher values were introduces for counterAtEnd
-  glimpse()
+# recapture -----
 
+recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |> # TODO note that some higher values were introduces for counterAtEnd
+  glimpse()
+# write clean csv
+write_csv(recapture, here::here("data", "tisdale_recapture.csv"))
+
+# release fish -----
 release_fish <- read_xlsx(here::here("data-raw", "tisdale_releasefish.xlsx")) |> # all forklengths are NA
   glimpse()
+# write clean csv
+write_csv(release_fish, here::here("data", "tisdale_release_fish.csv"))
 
+# release -----
+release <- read_xlsx(here::here("data-raw", "tisdale_release.xlsx")) |> # TODO no markedLifeStage recorded, should we delete?
+  glimpse()
+# write clean csv
+write_csv(release, here::here("data", "tisdale_release.csv"))
 
 # read in clean data to check ---------------------------------------------
 
 catch <- read_csv(here::here("data", "tisdale_catch.csv")) |> glimpse()
 trap <- read_csv(here::here("data", "tisdale_trap.csv")) |> glimpse()
-
+recapture <- read_csv(here::here("data", "tisdale_trap.csv")) |> glimpse()
+release_fish <- read_csv(here::here("data", "tisdale_trap.csv")) |> glimpse()
+release <- read_csv(here::here("data", "tisdale_trap.csv")) |> glimpse()

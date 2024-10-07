@@ -6427,7 +6427,7 @@ projectDescriptionID,trapVisitID,siteName,subSiteName,visitTime,visitTime2,visit
 10,6682,Tisdale Weir RST,RR,2022-11-04T10:15:29Z,2022-11-04T10:15:29Z,Unplanned restart,Processed fish,Trap stopped functioning,NA,0,1.89999997615814,Yes,1,0.5,54.5,2.6800000667572
 10,6683,Tisdale Weir RST,RR,2022-11-05T11:15:09Z,2022-11-05T11:15:09Z,Unplanned restart,No fish were caught,Trap stopped functioning,NA,0,2.29999995231628,Yes,1,0.5,54.5,2.77999997138977
 10,6684,Tisdale Weir RST,RL,2022-11-05T11:15:08Z,2022-11-05T11:15:08Z,Unplanned restart,Processed fish,Trap stopped functioning,NA,0,2.20000004768372,Yes,1,0.5,54.5,2.77999997138977
-10,6685,Tisdale Weir RST,RR,2022-11-06T11:00:23Z,2022-11-06T11:00:23Z,Continue trapping,No fish were caught,Trap functioning normally,1635,0.649999976158142,1.79999995231628,Yes,1,0.349999994039536,551,1.75
+10,6685,Tisdale Weir RST,RR,2022-11-06T11:00:23Z,2022-11-06T11:00:23Z,Continue trapping,No fish were caught,Trap functioning normally,1635,0.649999976158142,1.79999995231628,Yes,1,0.349999994039536,NA,1.75
 10,6686,Tisdale Weir RST,RL,2022-11-06T11:00:57Z,2022-11-06T11:00:57Z,Continue trapping,No fish were caught,Trap functioning normally,1542,1.14999997615814,2.5,Yes,1,0.349999994039536,55.0999984741211,1.75
 10,6687,Tisdale Weir RST,RL,2022-11-07T10:00:58Z,2022-11-07T10:00:58Z,Unplanned restart,No fish were caught,Trap stopped functioning,NA,0,1.89999997615814,Yes,1,0.5,55,2
 10,6688,Tisdale Weir RST,RR,2022-11-07T10:00:55Z,2022-11-07T10:00:55Z,Unplanned restart,No fish were caught,Trap stopped functioning,NA,0,2.5,Yes,1,0.5,55,2
