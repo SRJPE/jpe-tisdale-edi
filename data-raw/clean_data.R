@@ -41,7 +41,7 @@ trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |>
 write_csv(trap, here::here("data", "tisdale_trap.csv"))
 
 #TODO - clean up tables below, create metadata
-recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
+recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |> # note that some higher values were introduces for counterAtEnd
   glimpse()
 
 release_fish <- read_xlsx(here::here("data-raw", "tisdale_releasefish.xlsx")) |>
