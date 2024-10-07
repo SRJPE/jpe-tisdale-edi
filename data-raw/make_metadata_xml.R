@@ -6,14 +6,26 @@ library(EML)
 
 datatable_metadata <-
   dplyr::tibble(filepath = c("data/tisdale_catch.csv",
-                             "data/tisdale_trap.csv"),
+                             "data/tisdale_trap.csv",
+                             "data/tisdale_recapture.csv",
+                             "data/tisdale_release_fish.csv",
+                             "data/tisdale_release.csv"),
                 attribute_info = c("data-raw/metadata/tisdale_catch_metadata.xlsx",
-                                   "data-raw/metadata/tisdale_trap_metadata.xlsx"),
+                                   "data-raw/metadata/tisdale_trap_metadata.xlsx",
+                                   "data-raw/metadata/tisdale_recapture_metadata.xlsx",
+                                   "data-raw/metadata/tisdale_release_fish_metadata.xlsx",
+                                   "data-raw/metadata/tisdale_release_metadata.xlsx"),
                 datatable_description = c("Daily catch",
-                                          "Daily trap operations"),
+                                          "Daily trap operations",
+                                          "Recaptured catch",
+                                          "Release fish measurements",
+                                          "Release trial summary"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/",
                                        c("tisdale_catch.csv",
-                                         "tisdale_trap.csv")))
+                                         "tisdale_trap.csv",
+                                         "tisdale_recapture.csv",
+                                         "tisdale_release_fish.csv",
+                                         "tisdale_release.csv")))
 
 excel_path <- "data-raw/metadata/tisdale_project_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -42,14 +54,16 @@ dataset <- list() %>%
   add_datatable(datatable_metadata)
 
 # GO through and check on all units
-custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish"),
-                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless"),
-                           parentSI = c(NA, NA, NA, NA),
-                           multiplierToSI = c(NA, NA, NA, NA),
+custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "count of fish","day"),
+                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA, NA, NA, NA, NA),
+                           multiplierToSI = c(NA, NA, NA, NA, NA, NA),
                            description = c("number of rotations",
                                            "nephelometric turbidity units, common unit for measuring turbidity",
                                            "number of revolutions per minute",
-                                           "number of fish counted"))
+                                           "number of fish counted",
+                                           "count of fish",
+                                           "number of days"))
 
 
 unitList <- EML::set_unitList(custom_units)
@@ -65,7 +79,7 @@ edi_number
 EML::write_eml(eml, paste0(edi_number, ".xml"))
 EML::eml_validate(paste0(edi_number, ".xml"))
 
-EMLaide::evaluate_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
+EMLaide::evaluate_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))  #TODO figure out if this info needs to be updates
 EMLaide::upload_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
 
 # The code below is for updating the eml number and will need to be implemented when

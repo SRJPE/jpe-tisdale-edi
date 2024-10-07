@@ -30,7 +30,7 @@
       <electronicMailAddress>anna.allison@wildlife.ca.gov</electronicMailAddress>
       <role>principal investigator</role>
     </associatedParty>
-    <pubDate>2023-11-30</pubDate>
+    <pubDate>2024-10-07</pubDate>
     <abstract>
       <para>
     The Tisdale RST sampling site is operated by the California
@@ -247,8 +247,8 @@
       <entityDescription>Daily catch</entityDescription>
       <physical>
         <objectName>tisdale_catch.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">9688728</size>
+        <authentication method="MD5">9cc6df20093e233fe213864ea939c12b</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -458,7 +458,7 @@
                 <numberType>whole</numberType>
                 <bounds>
                   <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">4062</maximum>
+                  <maximum exclusive="false">4602</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -474,7 +474,23 @@
               <dateTimeDomain>
                 <bounds>
                   <minimum exclusive="false">40365.5421</minimum>
-                  <maximum exclusive="false">44913.4171</maximum>
+                  <maximum exclusive="false">45539.4173</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visitTime2</attributeName>
+          <attributeLabel>catch</attributeLabel>
+          <attributeDefinition>Date and time of day associated with the end of trap visit. Definition varies based on visitType.</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">40366.5421</minimum>
+                  <maximum exclusive="false">45540.4173</maximum>
                 </bounds>
               </dateTimeDomain>
             </dateTime>
@@ -553,15 +569,15 @@
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>71516</numberOfRecords>
+      <numberOfRecords>95534</numberOfRecords>
     </dataTable>
     <dataTable>
       <entityName>tisdale_trap.csv</entityName>
       <entityDescription>Daily trap operations</entityDescription>
       <physical>
         <objectName>tisdale_trap.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">1163011</size>
+        <authentication method="MD5">470d93e379a5ff86ce6e86e571744de0</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -648,7 +664,23 @@
               <dateTimeDomain>
                 <bounds>
                   <minimum exclusive="false">2010-07-06 13:00:34</minimum>
-                  <maximum exclusive="false">2022-12-18 10:00:36</maximum>
+                  <maximum exclusive="false">2022-09-04 10:00:57</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visitTime2</attributeName>
+          <attributeLabel>trap</attributeLabel>
+          <attributeDefinition>Date and time of day associated with the end of trap visit. Definition varies based on visitType.</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">40366.542060185187</minimum>
+                  <maximum exclusive="false">45540.417326331015</maximum>
                 </bounds>
               </dateTimeDomain>
             </dateTime>
@@ -709,7 +741,7 @@
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">28393</maximum>
+                  <maximum exclusive="false">3195559</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -817,7 +849,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">8.3000000000000007</minimum>
+                  <minimum exclusive="false">1.7</minimum>
                   <maximum exclusive="false">551</maximum>
                 </bounds>
               </numericDomain>
@@ -837,14 +869,697 @@
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0.97</minimum>
-                  <maximum exclusive="false">1425</maximum>
+                  <maximum exclusive="false">2079</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>6501</numberOfRecords>
+      <numberOfRecords>7418</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>tisdale_recapture.csv</entityName>
+      <entityDescription>Recaptured catch</entityDescription>
+      <physical>
+        <objectName>tisdale_recapture.csv</objectName>
+        <size unit="bytes">14</size>
+        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_recapture.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>ProjectDescriptionID</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Foreign key to the CAMP ProjectDescription table. All data associated with this package will have a ProjectDescriptionID = 10.</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>10</code>
+                    <definition>Tisdale RST</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>catchRawID</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Primary key in the CAMP CatchRaw table</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Primary key in the CAMP CatchRaw table</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trapVisitID</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Foreign key to the CAMP TrapVisit table</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Foreign key to the CAMP TrapVisit table</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>commonName</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Common name of species. Levels = c("Chinook salmon")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Common name of species. Levels = c("Chinook salmon")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseID</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Foreign Key to the CAMP Release table</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Foreign Key to the CAMP Release table</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>atCaptureRun</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Run designation as determined in the field or as assigned at a later date. This is the field used in analysis. Levels = c("Not recorded", "Fall", "Spring", "Winter", "Late fall", "Not applicable (n/a)")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Run designation as determined in the field or as assigned at a later date. This is the field used in analysis. Levels = c("Not recorded", "Fall", "Spring", "Winter", "Late fall", "Not applicable (n/a)")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>finalRun</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Run designation revised after field visit. Levels = c(NA, "Fall", "Spring", "Winter", "Not recorded", "Late fall", "Not applicable (n/a)")&#13;
+"Not applicable (n/a)")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Run designation revised after field visit. Levels = c(NA, "Fall", "Spring", "Winter", "Not recorded", "Late fall", "Not applicable (n/a)")&#13;
+"Not applicable (n/a)")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fishOrigin</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Origin/production type of the fish. Levels = c("Natural", "Hatchery", "Unknown")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Origin/production type of the fish. Levels = c("Natural", "Hatchery", "Unknown")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lifeStage</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Life stage of the fish. Levels = c("Not recorded", "Silvery parr", "Parr", "Fry", "Smolt", "Yolk sac fry (alevin)", &#13;
+"Adult", "Juvenile", "Button-up fry", "Ammocoete", "Yearling")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Life stage of the fish. Levels = c("Not recorded", "Silvery parr", "Parr", "Fry", "Smolt", "Yolk sac fry (alevin)", &#13;
+"Adult", "Juvenile", "Button-up fry", "Ammocoete", "Yearling")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>forkLength</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Fork length of the fish measured in millimeters</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">32</minimum>
+                  <maximum exclusive="false">173</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>n</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Number of fish actually handled/counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>number of fish</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">18</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visitTime</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Date and time of day associated with the trap visit.</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">40524.5316</minimum>
+                  <maximum exclusive="false">45380.4167</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visitTime2</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Date and time of day associated with the end of trap visit. Definition varies based on visitType.</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">40524.5316</minimum>
+                  <maximum exclusive="false">45380.4167</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visitType</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Work that was done during visit to trap. Levels = c("Continue trapping", "Unplanned restart", "End trapping", "Start trap &amp; begin trapping", "Service/adjust/clean trap", "Drive-by only")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Work that was done during visit to trap. Levels = c("Continue trapping", "Unplanned restart", "End trapping", "Start trap &amp; begin trapping", "Service/adjust/clean trap", "Drive-by only")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>siteName</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Name of the sampling site. Levels = c("Tisdale Weir RST")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Name of the sampling site. Levels = c("Tisdale Weir RST")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>subSiteName</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Name of the trap or trap location. Levels = c("RL", "RR", "N/A")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Name of the trap or trap location. Levels = c("RL", "RR", "N/A")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markType</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Type of mark found on fish. Levels = c("Pigment / dye", "Elastomer", "Fin clip")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Type of mark found on fish. Levels = c("Pigment / dye", "Elastomer", "Fin clip")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markColor</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Color of mark found on fish. Levels =c("Brown",  "Orange", "Not applicable (n/a)", "Pink", "Green", "White", "Yellow", "Red", "Not recorded")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Color of mark found on fish. Levels =c("Brown",  "Orange", "Not applicable (n/a)", "Pink", "Green", "White", "Yellow", "Red", "Not recorded")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markPosition</attributeName>
+          <attributeLabel>recapture</attributeLabel>
+          <attributeDefinition>Position of mark found on fish. Levels = c("Whole body", "Nose", "Not applicable (n/a)", "Pelvic fin", "Pelvic fin, left")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Position of mark found on fish. Levels = c("Whole body", "Nose", "Not applicable (n/a)", "Pelvic fin", "Pelvic fin, left")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>46</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>tisdale_release_fish.csv</entityName>
+      <entityDescription>Release fish measurements</entityDescription>
+      <physical>
+        <objectName>tisdale_release_fish.csv</objectName>
+        <size unit="bytes">14</size>
+        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_release_fish.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>projectDescriptionID</attributeName>
+          <attributeDefinition>Foreign key to the CAMP ProjectDescription table. All data associated with this package will have a ProjectDescriptionID = 10.</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>10</code>
+                    <definition>Tisdale RST</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseFishID</attributeName>
+          <attributeDefinition>Primary key in the CAMP ReleaseFish table</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Primary key in the CAMP ReleaseFish table</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseID</attributeName>
+          <attributeDefinition>Foreign Key to the CAMP Release table</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Foreign Key to the CAMP Release table</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>forkLength</attributeName>
+          <attributeDefinition>Fork length of the fish measured in milimeters</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">0</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>8</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>tisdale_release.csv</entityName>
+      <entityDescription>Release trial summary</entityDescription>
+      <physical>
+        <objectName>tisdale_release.csv</objectName>
+        <size unit="bytes">14</size>
+        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_release.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>projectDescriptionID</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Foreign key to the CAMP ProjectDescription table. All data associated with this package will have a ProjectDescriptionID = 10.</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>10</code>
+                    <definition>Tisdale RST</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseID</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Primary key that in combination with projectDescriptionID is unique (across other programs using CAMP)</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Primary key that in combination with projectDescriptionID is unique (across other programs using CAMP)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>commonName</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Common name of marked species. Levels = c("Chinook salmon", "Not applicable (n/a)")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Common name of marked species. Levels = c("Chinook salmon", "Not applicable (n/a)")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markedRun</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Run of fish marked. Levels = c("Not recorded", "Fall")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Run of fish marked. Levels = c("Not recorded", "Fall")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markedLifeStage</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Lifestage of fish marked. Levels =c(NA, "Not recorded")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Lifestage of fish marked. Levels =c(NA, "Not recorded")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>markedFishOrigin</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Origin or production type of fish marked. Levels =c("Unknown", "Natural", "Not recorded", "Hatchery")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Origin or production type of fish marked. Levels =c("Unknown", "Natural", "Not recorded", "Hatchery")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sourceOfFishSite</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Site where fish used for release were from. Levels = c("Coleman National Fish Hatchery", "Tisdale Weir RST", "NA"&#13;
+)</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Site where fish used for release were from. Levels = c("Coleman National Fish Hatchery", "Tisdale Weir RST", "NA"&#13;
+)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseSite</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Site where fish were released. Levels = c("Knights Landing release site", "Not applicable")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Site where fish were released. Levels = c("Knights Landing release site", "Not applicable")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseSubSite</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Subsite (within site) where fish were released. Corresponds to a trap location.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Subsite (within site) where fish were released. Corresponds to a trap location.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nReleased</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Number of fish released that were alive with mark intact</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>count of fish</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">75</minimum>
+                  <maximum exclusive="false">1941</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>releaseTime</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Date and time of release</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">2012-02-05 12:00:32</minimum>
+                  <maximum exclusive="false">2024-03-28 12:00:08</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>testDays</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Number of days this trap test is considered valid</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>day</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">7</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>appliedMarkType</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Mark type that was applied to the release group. Levels = c("Pigment / dye", "Fin clip", "Elastomer", NA)</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Mark type that was applied to the release group. Levels = c("Pigment / dye", "Fin clip", "Elastomer", NA)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>appliedMarkColor</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Color of mark that was applied to the release group. Levels = c("Brown", "Orange", "Pink", NA, "Green", "Red", "Blue", "Purple / Violet")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Color of mark that was applied to the release group. Levels = c("Brown", "Orange", "Pink", NA, "Green", "Red", "Blue", "Purple / Violet")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>appliedMarkPosition</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Position of the mark that was applied to the mark group. Levels = c("Whole body", "Nose", "Pelvic fin, left", "Pelvic fin, right", NA)</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Position of the mark that was applied to the mark group. Levels = c("Whole body", "Nose", "Pelvic fin, left", "Pelvic fin, right", NA)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>appliedMarkCode</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Code for mark/tag applied to release group</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Code for mark/tag applied to release group</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>includeAnalysis</attributeName>
+          <attributeLabel>release</attributeLabel>
+          <attributeDefinition>Code for whether release trial should be included. Levels = c("Yes", "No")</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Code for whether release trial should be included. Levels = c("Yes", "No")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>63</numberOfRecords>
     </dataTable>
   </dataset>
   <additionalMetadata>
@@ -861,6 +1576,12 @@
         </unit>
         <unit id="number of fish" name="number of fish" unitType="dimensionless">
           <description>number of fish counted</description>
+        </unit>
+        <unit id="count of fish" name="count of fish" unitType="dimensionless">
+          <description>count of fish</description>
+        </unit>
+        <unit id="day" name="day" unitType="dimensionless">
+          <description>number of days</description>
         </unit>
       </unitList>
     </metadata>
