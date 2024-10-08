@@ -1,7 +1,6 @@
 library(tidyverse)
 library(readxl)
 
-#TODO add code for trapstart/end (refer to knights landing), to catch, trap and, recapture
 
 catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated query has visitTime2
   mutate(totalLength = as.numeric(totalLength)) |>
