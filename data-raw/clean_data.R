@@ -1,9 +1,17 @@
 library(tidyverse)
 library(readxl)
 
+#TODO add code for trapstart/end (refer to knights landing), to catch, trap and, recapture
+
 catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated query has visitTime2
   mutate(totalLength = as.numeric(totalLength)) |>
+  arrange(subSiteName, visitTime) |>
+  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
+                                             T ~ visitTime)),
+         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
+                                           T ~ visitTime2))) |>
   glimpse()
+
 
 # atCaptureRun vs finalRun
 catch |>
@@ -31,25 +39,36 @@ catch |>
 write_csv(catch, here::here("data", "tisdale_catch.csv"))
 
 # trap -----
-trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |>
+trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |> # TODO note that some higher values were introduces for counterAtEnd
   mutate(discharge = as.numeric(discharge),
          waterTemp = ifelse(waterTemp > 500, NA, waterTemp)) |>  # setting outlier of 551 in waterTemp to NA
-  glimpse()
+  arrange(subSiteName, visitTime) |>
+  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
+                                             T ~ visitTime)),
+         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
+                                           T ~ visitTime2))) |>
+  glimpse() #TODO check if temp is on C of F. range is ~1-70
 # write clean csv
 write_csv(trap, here::here("data", "tisdale_trap.csv"))
 
 # recapture -----
 
-recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |> # TODO note that some higher values were introduces for counterAtEnd
+recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
+  arrange(subSiteName, visitTime) |>
+  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
+                                             T ~ visitTime)),
+         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
+                                           T ~ visitTime2))) |>
   glimpse()
 # write clean csv
 write_csv(recapture, here::here("data", "tisdale_recapture.csv"))
 
 # release fish -----
-release_fish <- read_xlsx(here::here("data-raw", "tisdale_releasefish.xlsx")) |> # all forklengths are NA
-  glimpse()
+# There is currently no data on this tableso we will not include at this time
+# release_fish <- read_xlsx(here::here("data-raw", "tisdale_releasefish.xlsx")) |> # all forklengths are NA
+#   glimpse()
 # write clean csv
-write_csv(release_fish, here::here("data", "tisdale_release_fish.csv"))
+# write_csv(release_fish, here::here("data", "tisdale_release_fish.csv"))
 
 # release -----
 release <- read_xlsx(here::here("data-raw", "tisdale_release.xlsx")) |> # TODO no markedLifeStage recorded, should we delete?
@@ -62,5 +81,5 @@ write_csv(release, here::here("data", "tisdale_release.csv"))
 catch <- read_csv(here::here("data", "tisdale_catch.csv")) |> glimpse()
 trap <- read_csv(here::here("data", "tisdale_trap.csv")) |> glimpse()
 recapture <- read_csv(here::here("data", "tisdale_recapture.csv")) |> glimpse()
-release_fish <- read_csv(here::here("data", "tisdale_release_fish.csv")) |> glimpse()
+# release_fish <- read_csv(here::here("data", "tisdale_release_fish.csv")) |> glimpse()
 release <- read_csv(here::here("data", "tisdale_release.csv")) |> glimpse()
