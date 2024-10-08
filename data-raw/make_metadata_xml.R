@@ -8,23 +8,23 @@ datatable_metadata <-
   dplyr::tibble(filepath = c("data/tisdale_catch.csv",
                              "data/tisdale_trap.csv",
                              "data/tisdale_recapture.csv",
-                             "data/tisdale_release_fish.csv",
+                             # "data/tisdale_release_fish.csv",
                              "data/tisdale_release.csv"),
                 attribute_info = c("data-raw/metadata/tisdale_catch_metadata.xlsx",
                                    "data-raw/metadata/tisdale_trap_metadata.xlsx",
                                    "data-raw/metadata/tisdale_recapture_metadata.xlsx",
-                                   "data-raw/metadata/tisdale_release_fish_metadata.xlsx",
+                                   # "data-raw/metadata/tisdale_release_fish_metadata.xlsx",
                                    "data-raw/metadata/tisdale_release_metadata.xlsx"),
                 datatable_description = c("Daily catch",
                                           "Daily trap operations",
                                           "Recaptured catch",
-                                          "Release fish measurements",
+                                          # "Release fish measurements",
                                           "Release trial summary"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/",
                                        c("tisdale_catch.csv",
                                          "tisdale_trap.csv",
                                          "tisdale_recapture.csv",
-                                         "tisdale_release_fish.csv",
+                                         # "tisdale_release_fish.csv",
                                          "tisdale_release.csv")))
 
 excel_path <- "data-raw/metadata/tisdale_project_metadata.xlsx"
@@ -38,7 +38,7 @@ methods_docx <- "data-raw/metadata/methods.md" # use md for bulleted formatting.
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("edi_user_id"), password = Sys.getenv("edi_password"))
 # edi_number <- "edi.1499.1" # reserved 9-20-2023 under srjpe account
-edi_number <- "edi.1499.2" # for updating filenames 11-2023
+edi_number <- "edi.1499.3" # for updating filenames 11-2023
 
 dataset <- list() %>%
   add_pub_date() %>%
@@ -80,7 +80,9 @@ EML::write_eml(eml, paste0(edi_number, ".xml"))
 EML::eml_validate(paste0(edi_number, ".xml"))
 
 EMLaide::evaluate_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))  #TODO figure out if this info needs to be updates
-EMLaide::upload_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
+# EMLaide::upload_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), paste0(edi_number, ".xml"))
+# EMLaide::update_edi_package(Sys.getenv("edi_user_id"), Sys.getenv("edi_password"), "edi.1499.2", paste0(edi_number, ".xml"))
+#TODO when ready, run upload code
 
 # The code below is for updating the eml number and will need to be implemented when
 # we move to automated updates
