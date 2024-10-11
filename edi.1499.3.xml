@@ -30,7 +30,7 @@
       <electronicMailAddress>anna.allison@wildlife.ca.gov</electronicMailAddress>
       <role>principal investigator</role>
     </associatedParty>
-    <pubDate>2024-10-08</pubDate>
+    <pubDate>2024-10-11</pubDate>
     <abstract>
       <para>
     The Tisdale RST sampling site is operated by the California
@@ -761,6 +761,25 @@
           </measurementScale>
         </attribute>
         <attribute>
+          <attributeName>counterAtStart</attributeName>
+          <attributeLabel>trap</attributeLabel>
+          <attributeDefinition>Reading on the rotation counter at the start of the trap visit</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>number of rotations</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">3504561</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
           <attributeName>counterAtEnd</attributeName>
           <attributeLabel>trap</attributeLabel>
           <attributeDefinition>Reading on the rotation counter at the end of the trap visit but before resetting</attributeDefinition>
@@ -773,7 +792,7 @@
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">3195559</maximum>
+                  <maximum exclusive="false">28393</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -876,13 +895,32 @@
           <measurementScale>
             <ratio>
               <unit>
-                <standardUnit>fahrenheit</standardUnit>
+                <standardUnit>celsius</standardUnit>
               </unit>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">1.7</minimum>
-                  <maximum exclusive="false">551</maximum>
+                  <maximum exclusive="false">24.44</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lightPenetration</attributeName>
+          <attributeLabel>trap</attributeLabel>
+          <attributeDefinition>Instantaneous light penetration measured</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">7.0000000000000007E-2</minimum>
+                  <maximum exclusive="false">32.4</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -891,17 +929,55 @@
         <attribute>
           <attributeName>turbidity</attributeName>
           <attributeLabel>trap</attributeLabel>
-          <attributeDefinition>Turbidity measured at trap</attributeDefinition>
+          <attributeDefinition>Instantaneous turbidity measurement</attributeDefinition>
           <measurementScale>
             <ratio>
               <unit>
-                <customUnit>NTU</customUnit>
+                <customUnit>Nephelometric Turbidity Units (NTU)</customUnit>
               </unit>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0.97</minimum>
                   <maximum exclusive="false">2079</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dissolvedOxygen</attributeName>
+          <attributeLabel>trap</attributeLabel>
+          <attributeDefinition>Instantaneous dissolved oxygen measurement</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>percent</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">1</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>conductivity</attributeName>
+          <attributeLabel>trap</attributeLabel>
+          <attributeDefinition>Instantaneous conductivity measurement</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>microSiemens per centimeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">1</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -940,7 +1016,7 @@
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>7418</numberOfRecords>
+      <numberOfRecords>7488</numberOfRecords>
     </dataTable>
     <dataTable>
       <entityName>tisdale_recapture.csv</entityName>
@@ -1577,7 +1653,7 @@
         <unit id="number of rotations" name="number of rotations" unitType="dimensionless">
           <description>number of rotations</description>
         </unit>
-        <unit id="NTU" name="NTU" unitType="dimensionless">
+        <unit id="Nephelometric Turbidity Units (NTU)" name="Nephelometric Turbidity Units (NTU)" unitType="dimensionless">
           <description>nephelometric turbidity units, common unit for measuring turbidity</description>
         </unit>
         <unit id="revolutions per minute" name="revolutions per minute" unitType="dimensionless">
@@ -1591,6 +1667,9 @@
         </unit>
         <unit id="day" name="day" unitType="dimensionless">
           <description>number of days</description>
+        </unit>
+        <unit id="microSiemens per centimeter" name="microSiemens per centimeter" unitType="dimensionless">
+          <description>microSiemens per centimeter</description>
         </unit>
       </unitList>
     </metadata>

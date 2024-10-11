@@ -54,16 +54,17 @@ dataset <- list() %>%
   add_datatable(datatable_metadata)
 
 # GO through and check on all units
-custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per minute", "number of fish", "count of fish","day"),
-                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
-                           parentSI = c(NA, NA, NA, NA, NA, NA),
-                           multiplierToSI = c(NA, NA, NA, NA, NA, NA),
+custom_units <- data.frame(id = c("number of rotations", "Nephelometric Turbidity Units (NTU)", "revolutions per minute", "number of fish", "count of fish","day", "microSiemens per centimeter"),
+                           unitType = c("dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA, NA, NA, NA, NA, NA),
+                           multiplierToSI = c(NA, NA, NA, NA, NA, NA, NA),
                            description = c("number of rotations",
                                            "nephelometric turbidity units, common unit for measuring turbidity",
                                            "number of revolutions per minute",
                                            "number of fish counted",
                                            "count of fish",
-                                           "number of days"))
+                                           "number of days",
+                                           "microSiemens per centimeter"))
 
 
 unitList <- EML::set_unitList(custom_units)
