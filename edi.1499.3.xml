@@ -261,7 +261,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_catch.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_catch.csv</url>
           </online>
         </distribution>
       </physical>
@@ -622,7 +622,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_trap.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_trap.csv</url>
           </online>
         </distribution>
       </physical>
@@ -1037,7 +1037,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_recapture.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_recapture.csv</url>
           </online>
         </distribution>
       </physical>
@@ -1383,7 +1383,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_release.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_release.csv</url>
           </online>
         </distribution>
       </physical>
@@ -1494,12 +1494,12 @@
         <attribute>
           <attributeName>releaseSite</attributeName>
           <attributeLabel>release</attributeLabel>
-          <attributeDefinition>Site where fish were released. Levels = c("Knights Landing release site", "Not applicable")</attributeDefinition>
+          <attributeDefinition>Site where fish were released. Levels = c("Tisdale Weir release site")</attributeDefinition>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Site where fish were released. Levels = c("Knights Landing release site", "Not applicable")</definition>
+                  <definition>Site where fish were released. Levels = c("Tisdale Weir release site")</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>

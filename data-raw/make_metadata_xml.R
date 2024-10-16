@@ -20,7 +20,7 @@ datatable_metadata <-
                                           "Recaptured catch",
                                           # "Release fish measurements",
                                           "Release trial summary"),
-                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/",
+                datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/",
                                        c("tisdale_catch.csv",
                                          "tisdale_trap.csv",
                                          "tisdale_recapture.csv",
