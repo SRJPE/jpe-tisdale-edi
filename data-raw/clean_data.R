@@ -64,7 +64,10 @@ recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
   mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
                                              T ~ visitTime)),
          trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
-                                           T ~ visitTime2))) |>
+                                           T ~ visitTime2)),
+         markPosition = case_when(markPosition == "Pelvic fin, right" ~ "Pelvic fin right",
+                                  markPosition == "Pelvic fin, left" ~ "Pelvic fin left",
+                                  T ~ markPosition)) |>
   filter(siteName != "Lower Feather River RST") |>
   glimpse()
 # write clean csv
