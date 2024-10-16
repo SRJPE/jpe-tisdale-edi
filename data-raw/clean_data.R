@@ -82,6 +82,9 @@ write_csv(recapture, here::here("data", "tisdale_recapture.csv"))
 
 # release -----
 release <- read_xlsx(here::here("data-raw", "tisdale_release.xlsx")) |> # TODO no markedLifeStage recorded, should we delete?
+  mutate(appliedMarkPosition = case_when(appliedMarkPosition == "Pelvic fin, right" ~ "Pelvic fin right",
+                                         appliedMarkPosition == "Pelvic fin, left" ~ "Pelvic fin left",
+                                         T ~ appliedMarkPosition)) |>
   glimpse()
 # write clean csv
 write_csv(release, here::here("data", "tisdale_release.csv"))

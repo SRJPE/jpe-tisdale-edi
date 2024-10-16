@@ -30,7 +30,7 @@
       <electronicMailAddress>anna.allison@wildlife.ca.gov</electronicMailAddress>
       <role>principal investigator</role>
     </associatedParty>
-    <pubDate>2024-10-11</pubDate>
+    <pubDate>2024-10-16</pubDate>
     <abstract>
       <para>
     The Tisdale RST sampling site is operated by the California
@@ -247,8 +247,8 @@
       <entityDescription>Daily catch</entityDescription>
       <physical>
         <objectName>tisdale_catch.csv</objectName>
-        <size unit="bytes">9688728</size>
-        <authentication method="MD5">9cc6df20093e233fe213864ea939c12b</authentication>
+        <size unit="bytes">16908858</size>
+        <authentication method="MD5">37f9a7c674bfdd32bc568aeb7ad4b55e</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -261,7 +261,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_catch.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_catch.csv</url>
           </online>
         </distribution>
       </physical>
@@ -513,12 +513,12 @@
         <attribute>
           <attributeName>siteName</attributeName>
           <attributeLabel>catch</attributeLabel>
-          <attributeDefinition>Name of the sampling site. Levels = c("Tisdale Weir RST", "Lower Feather River RST")</attributeDefinition>
+          <attributeDefinition>Name of the sampling site. Levels = c("Tisdale Weir RST")</attributeDefinition>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Name of the sampling site. Levels = c("Tisdale Weir RST", "Lower Feather River RST")</definition>
+                  <definition>Name of the sampling site. Levels = c("Tisdale Weir RST")</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
@@ -601,15 +601,15 @@
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>95534</numberOfRecords>
+      <numberOfRecords>86092</numberOfRecords>
     </dataTable>
     <dataTable>
       <entityName>tisdale_trap.csv</entityName>
       <entityDescription>Daily trap operations</entityDescription>
       <physical>
         <objectName>tisdale_trap.csv</objectName>
-        <size unit="bytes">1163011</size>
-        <authentication method="MD5">470d93e379a5ff86ce6e86e571744de0</authentication>
+        <size unit="bytes">1641668</size>
+        <authentication method="MD5">e8e4b7c8bb2e3373d6f9de84382444e5</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -622,7 +622,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_trap.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_trap.csv</url>
           </online>
         </distribution>
       </physical>
@@ -661,12 +661,12 @@
         <attribute>
           <attributeName>siteName</attributeName>
           <attributeLabel>trap</attributeLabel>
-          <attributeDefinition>Name of the sampling site. Levels = c("Tisdale Weir RST", "Lower Feather River RST")</attributeDefinition>
+          <attributeDefinition>Name of the sampling site. Levels = c("Tisdale Weir RST")</attributeDefinition>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Name of the sampling site. Levels = c("Tisdale Weir RST", "Lower Feather River RST")</definition>
+                  <definition>Name of the sampling site. Levels = c("Tisdale Weir RST")</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
@@ -1023,8 +1023,8 @@
       <entityDescription>Recaptured catch</entityDescription>
       <physical>
         <objectName>tisdale_recapture.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">10302</size>
+        <authentication method="MD5">80547a2206d3f773ec92b7856adb5a68</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1037,7 +1037,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_recapture.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_recapture.csv</url>
           </online>
         </distribution>
       </physical>
@@ -1369,8 +1369,8 @@
       <entityDescription>Release trial summary</entityDescription>
       <physical>
         <objectName>tisdale_release.csv</objectName>
-        <size unit="bytes">14</size>
-        <authentication method="MD5">3be7b8b182ccd96e48989b4e57311193</authentication>
+        <size unit="bytes">9606</size>
+        <authentication method="MD5">bf34cb6821b16a603d03c3caa86e7975</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1383,7 +1383,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/main/data/tisdale_release.csv</url>
+            <url function="download">https://raw.githubusercontent.com/SRJPE/jpe-tisdale-edi/updates-edi-092024/data/tisdale_release.csv</url>
           </online>
         </distribution>
       </physical>

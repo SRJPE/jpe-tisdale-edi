@@ -22,10 +22,10 @@ projectDescriptionID,releaseID,commonName,markedRun,markedLifeStage,markedFishOr
 10,276,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,250,2017-03-31T10:00:44Z,7,Pigment / dye,Brown,Whole body,NA,Yes
 10,277,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,297,2017-04-03T12:00:44Z,7,Pigment / dye,Brown,Whole body,NA,Yes
 10,278,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,993,2017-04-05T10:30:44Z,7,Elastomer,White,Nose,NA,Yes
-10,279,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1170,2017-09-13T15:15:44Z,7,Fin clip,Not applicable (n/a),"Pelvic fin, right",NA,Yes
-10,280,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1024,2017-10-11T14:30:44Z,7,Fin clip,Not applicable (n/a),"Pelvic fin, left",NA,Yes
-10,281,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1168,2017-10-25T14:30:44Z,7,Fin clip,Not applicable (n/a),"Pelvic fin, right",NA,Yes
-10,282,Chinook salmon,Fall,NA,Hatchery,Tisdale Weir RST,Tisdale Weir release site,1 RM up,1004,2017-11-15T14:30:44Z,7,Fin clip,Not applicable (n/a),"Pelvic fin, left",NA,Yes
+10,279,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1170,2017-09-13T15:15:44Z,7,Fin clip,Not applicable (n/a),Pelvic fin right,NA,Yes
+10,280,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1024,2017-10-11T14:30:44Z,7,Fin clip,Not applicable (n/a),Pelvic fin left,NA,Yes
+10,281,Chinook salmon,Fall,NA,Hatchery,Coleman National Fish Hatchery,Tisdale Weir release site,1 RM up,1168,2017-10-25T14:30:44Z,7,Fin clip,Not applicable (n/a),Pelvic fin right,NA,Yes
+10,282,Chinook salmon,Fall,NA,Hatchery,Tisdale Weir RST,Tisdale Weir release site,1 RM up,1004,2017-11-15T14:30:44Z,7,Fin clip,Not applicable (n/a),Pelvic fin left,NA,Yes
 10,283,Chinook salmon,Fall,NA,Hatchery,Tisdale Weir RST,Tisdale Weir release site,NA,500,2023-01-24T12:00:08Z,7,Pigment / dye,Brown,Whole body,NA,Yes
 10,286,Chinook salmon,Fall,NA,Hatchery,NA,Tisdale Weir release site,NA,103,2012-02-19T12:00:32Z,7,Pigment / dye,Not applicable (n/a),Not applicable (n/a),NA,Yes
 10,292,Chinook salmon,Fall,NA,Hatchery,NA,Tisdale Weir release site,NA,128,2012-02-05T12:00:32Z,7,Pigment / dye,Not applicable (n/a),Not applicable (n/a),NA,Yes
