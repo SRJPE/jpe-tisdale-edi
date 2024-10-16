@@ -1369,8 +1369,8 @@
       <entityDescription>Release trial summary</entityDescription>
       <physical>
         <objectName>tisdale_release.csv</objectName>
-        <size unit="bytes">9606</size>
-        <authentication method="MD5">bf34cb6821b16a603d03c3caa86e7975</authentication>
+        <size unit="bytes">9594</size>
+        <authentication method="MD5">de89f74458ed114ed5501c5530abac8c</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
