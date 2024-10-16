@@ -10,6 +10,7 @@ catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated que
                                              T ~ visitTime)),
          trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
                                            T ~ visitTime2))) |>
+  filter(siteName != "Lower Feather River RST") |>
   glimpse()
 
 
@@ -51,6 +52,7 @@ trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |> # note that th
          waterTemp = ifelse(waterTemp > 25, fahrenheit.to.celsius(waterTemp), waterTemp)) |> # doing the conversion "manually"
          # waterTemp = ifelse(waterTempUnitID == 19, fahrenheit.to.celsius(waterTemp), waterTemp)) |> TODO check on the criteria for the waterTempUnit
   select(-waterTempUnitID) |>
+  filter(siteName != "Lower Feather River RST") |>
   glimpse() #TODO check if temp is on C of F. range is ~1-70
 # write clean csv
 write_csv(trap, here::here("data", "tisdale_trap.csv"))
@@ -63,6 +65,7 @@ recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
                                              T ~ visitTime)),
          trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
                                            T ~ visitTime2))) |>
+  filter(siteName != "Lower Feather River RST") |>
   glimpse()
 # write clean csv
 write_csv(recapture, here::here("data", "tisdale_recapture.csv"))
