@@ -2,14 +2,30 @@ library(tidyverse)
 library(readxl)
 library(weathermetrics)
 
-
-catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated query has visitTime2
-  mutate(totalLength = as.numeric(totalLength)) |>
+# trap -----
+trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |> # note that there is one really high counterAtStart vale, setting to NA (33303251)
+  mutate(discharge = as.numeric(discharge),
+         waterTemp = ifelse(waterTemp > 500, NA, waterTemp),
+         counterAtStart = ifelse(counterAtStart == 33303251, NA, counterAtStart)) |>  # setting outlier of 551 in waterTemp to NA
   arrange(subSiteName, visitTime) |>
   mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
                                              T ~ visitTime)),
          trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
-                                           T ~ visitTime2))) |>
+                                           T ~ visitTime2)),
+         waterTemp = ifelse(waterTemp > 25, fahrenheit.to.celsius(waterTemp), waterTemp)) |> # doing the conversion "manually"
+  # waterTemp = ifelse(waterTempUnitID == 19, fahrenheit.to.celsius(waterTemp), waterTemp)) |> TODO check on the criteria for the waterTempUnit
+  select(-waterTempUnitID) |>
+  glimpse() #TODO check if temp is on C of F. range is ~1-70
+# write clean csv
+write_csv(trap, here::here("data", "tisdale_trap.csv"))
+
+# catch -----
+
+catch <- read_xlsx(here::here("data-raw", "tisdale_catch.xlsx")) |> #updated query has visitTime2
+  mutate(totalLength = as.numeric(totalLength)) |>
+  arrange(subSiteName, visitTime) |>
+  left_join(trap |>
+              select(trapVisitID, trap_start_date, trap_end_date)) |>
   glimpse()
 
 
@@ -38,31 +54,14 @@ catch |>
 
 write_csv(catch, here::here("data", "tisdale_catch.csv"))
 
-# trap -----
-trap <- read_xlsx(here::here("data-raw", "tisdale_trap.xlsx")) |> # note that there is one really high counterAtStart vale, setting to NA (33303251)
-  mutate(discharge = as.numeric(discharge),
-         waterTemp = ifelse(waterTemp > 500, NA, waterTemp),
-         counterAtStart = ifelse(counterAtStart == 33303251, NA, counterAtStart)) |>  # setting outlier of 551 in waterTemp to NA
-  arrange(subSiteName, visitTime) |>
-  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
-                                             T ~ visitTime)),
-         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
-                                           T ~ visitTime2)),
-         waterTemp = ifelse(waterTemp > 25, fahrenheit.to.celsius(waterTemp), waterTemp)) |> # doing the conversion "manually"
-         # waterTemp = ifelse(waterTempUnitID == 19, fahrenheit.to.celsius(waterTemp), waterTemp)) |> TODO check on the criteria for the waterTempUnit
-  select(-waterTempUnitID) |>
-  glimpse() #TODO check if temp is on C of F. range is ~1-70
-# write clean csv
-write_csv(trap, here::here("data", "tisdale_trap.csv"))
+
 
 # recapture -----
 
 recapture <- read_xlsx(here::here("data-raw", "tisdale_recapture.xlsx")) |>
   arrange(subSiteName, visitTime) |>
-  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
-                                             T ~ visitTime)),
-         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
-                                           T ~ visitTime2))) |>
+  left_join(trap |>
+              select(trapVisitID, trap_start_date, trap_end_date)) |>
   glimpse()
 # write clean csv
 write_csv(recapture, here::here("data", "tisdale_recapture.csv"))
