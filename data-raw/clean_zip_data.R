@@ -101,7 +101,7 @@ clean_current_year <- function(clean_data_path){
   }
   # Combine data
   # Write updated data back to the temporary directory
-  write_csv(clean_currenty_year, new_file)
+  write_csv(clean_current_year_data, clean_data_path)
 
 }
 # Paths for historical and new data
@@ -119,4 +119,4 @@ current_year_path <- sort(c("data/current_year_tisdale_catch.csv",
                             "data/current_year_tisdale_release.csv",
                             "data/current_year_tisdale_recapture.csv",
                             "data/current_year_tisdale_trap.csv"))
-mapply(clean_current_year_data, current_year_path)
+mapply(clean_current_year, current_year_path)
