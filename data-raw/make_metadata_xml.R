@@ -90,16 +90,16 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 #methods_docx <- "data-raw/metadata/methods.docx"
 methods_docx <- "data-raw/metadata/methods.md" # use md for bulleted formatting. I don't believe lists are allowed in methods (https://edirepository.org/news/news-20210430.00)
 
-catch_df <- readr::read_csv(unzip("data/tisdale_validated.zip", "tisdale_catch.csv"))
-catch_coverage <- tail(catch_df$visitTime, 1)
-metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
-
-wb <- openxlsx::createWorkbook()
-for (sheet_name in names(metadata)) {
-  openxlsx::addWorksheet(wb, sheetName = sheet_name)
-  openxlsx::writeData(wb, sheet = sheet_name, x = metadata[[sheet_name]], rowNames = FALSE)
-}
-openxlsx::saveWorkbook(wb, file = excel_path, overwrite=TRUE)
+# catch_df <- readr::read_csv(unzip("data/tisdale.zip", "tisdale_catch.csv"))
+# catch_coverage <- tail(catch_df$visitTime, 1)
+# metadata$coverage$end_date <- lubridate::floor_date(catch_coverage, unit = "days")
+#
+# wb <- openxlsx::createWorkbook()
+# for (sheet_name in names(metadata)) {
+#   openxlsx::addWorksheet(wb, sheetName = sheet_name)
+#   openxlsx::writeData(wb, sheet = sheet_name, x = metadata[[sheet_name]], rowNames = FALSE)
+# }
+# openxlsx::saveWorkbook(wb, file = excel_path, overwrite=TRUE)
 
 vl <- readr::read_csv("data-raw/version_log.csv", col_types = c('c', "D"))
 previous_edi_number <- tail(vl['edi_version'], n=1)
